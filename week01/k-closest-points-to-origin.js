@@ -1,23 +1,42 @@
-// https://leetcode.com/problems/k-closest-points-to-origin/solution/
-
 /**
- * @param {number[][]} points
- * @param {number} k
- * @return {number[][]}
+ * WIP: https://leetcode.com/problems/k-closest-points-to-origin/solution/
+ * Definition for a binary tree node:
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
  */
 
-const pointsA = [
-  [1, 3],
-  [-2, 2],
-];
-const kA = 1;
+/**
+ * @param {TreeNode} root
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {TreeNode}
+ */
 
-const pointsB = [
-  [3, 3],
-  [5, -1],
-  [-2, 4],
-];
-const kB = 2;
+function TreeNode(val) {
+  this.val = val;
+  this.left = this.right = null;
+}
+
+function buildTree(points) {
+  const tree = new Array();
+  // create tree
+  points.forEach((point) => {
+    const newNode = TreeNode(point);
+    if (tree.length) {
+      const currNode = tree[0];
+      if(!currNode.left && !currNode.right) {
+
+      } else {
+
+      }
+    } else {
+      // set newNode as root node
+      tree.push(newNode);
+    }
+  });
+}
 
 var kClosest = function (points, k) {
   const pointsObjs = [];
@@ -44,8 +63,19 @@ var kClosest = function (points, k) {
   return finalPoints;
 };
 
+const pointsA = [
+  [1, 3],
+  [-2, 2],
+];
+const kA = 1;
 const answerA = kClosest(pointsA, kA);
 console.log("answerA:", answerA);
 
+const pointsB = [
+  [3, 3],
+  [5, -1],
+  [-2, 4],
+];
+const kB = 2;
 const answerB = kClosest(pointsB, kB);
 console.log("answerB:", answerB);

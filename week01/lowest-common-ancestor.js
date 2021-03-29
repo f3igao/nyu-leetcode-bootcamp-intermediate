@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/
-
 /**
- * Definition for a binary tree node.
+ * WIP: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+ * Definition for a binary tree node:
  * function TreeNode(val) {
  *     this.val = val;
  *     this.left = this.right = null;
@@ -14,16 +13,12 @@
  * @return {TreeNode}
  */
 
-const mockRoot = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4];
-const mockP = 5;
-const mockQ = 1;
-
 var lowestCommonAncestor = function (root, p, q) {
   root.sort();
   console.log(root);
-  //   if (!root) {
-  //     return null;
-  //   }
+  if (!root.length()) {
+    return null;
+  }
 
   //   if (root.val === p.val || root.val === q.val) {
   //     return root;
@@ -41,4 +36,14 @@ var lowestCommonAncestor = function (root, p, q) {
   //   }
 };
 
-lowestCommonAncestor(mockRoot, mockP, mockQ);
+const rootA = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4];
+const pA = 5;
+const qA = 1;
+const answerA = lowestCommonAncestor(rootA, pA, qA); // 3
+console.log("answerA:", answerA);
+
+const rootB = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4];
+const pB = 5;
+const qB = 4;
+console.log("answerB:", answerB);
+const answerB = lowestCommonAncestor(rootB, pB, qB); // 5
